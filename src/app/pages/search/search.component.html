@@ -1,0 +1,38 @@
+<section>
+    <header>
+        <figure><img src="../../../assets/images/COLOURBOX15440476.jpg" alt="header image"></figure>
+    </header>
+    <section class="container-search">
+        <span id="bread">
+            <a href="/">FORSIDE</a> <span class="material-icons">keyboard_arrow_right</span>
+            <p>DELTAGERLISTE</p>
+        </span>
+        <h1 *ngIf="participantsData">{{participantsData.title}}</h1>
+        <section *ngIf="participantsData" [innerHTML]="participantsData.content">
+        </section>
+        <form class="searchForm" action="POST" [formGroup]="search">
+            <input type="text" formControlName="keyword" placeholder="Søg..">
+            <button (click)="submit()">Søg</button>
+        </form>
+    </section>
+    <section class="result">
+        <div class="sort">
+            <button (click)="sortId()">
+                <p>Startnr.</p> <span class="material-icons">unfold_more</span>
+            </button>
+            <button (click)="sortNames()">
+                <p>Deltager</p> <span class="material-icons">unfold_more</span>
+            </button>
+            <button (click)="sortCities()">
+                <p>Deltager</p> <span class="material-icons">unfold_more</span>
+            </button>
+        </div>
+        <section class="resultContainer">
+            <div class="showResult" *ngFor="let item of result">
+                <p>{{item.id}}</p>
+                <p>{{item.firstname}} {{item.lastname}}</p>
+                <p>{{item.city}}</p>
+            </div>
+        </section>
+    </section>
+</section>

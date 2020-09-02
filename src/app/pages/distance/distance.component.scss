@@ -1,0 +1,243 @@
+section {
+
+    figure {
+        width: 100%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: 0 -200px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+        }
+    }
+
+    #bread {
+        display: block;
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 1.4em;
+        }
+
+        a {
+            color: #eb4034;
+            text-decoration: none;
+        }
+    }
+}
+
+.container {
+    padding: 2em;
+
+    .content-distance {
+        margin-top: 1em;
+    }
+
+    .run-container {
+        margin-top: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+
+        .runs {
+            background-color: #1C3041;
+            padding: 1em;
+            width: 100%;
+            min-height: 530px;
+
+            p {
+                color: white;
+            }
+
+            ul {
+                margin-top: 1em;
+
+                li {
+                    list-style: none;
+                    margin-top: 1em;
+
+                    button {
+                        width: 100%;
+                        padding: 1em;
+                        background-color: #5386E4;
+                        color-interpolation-filters: white;
+                        border: none;
+                        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                        cursor: pointer;
+                        display: grid;
+                        grid-template-columns: 1fr 20%;
+                        align-items: center;
+
+                        .title-run {
+                            justify-self: start;
+                        }
+
+                        .arrow-run {
+                            display: block;
+                            justify-self: end;
+                        }
+                    }
+                }
+            }
+        }
+
+        .run {
+            position: relative;
+            background-color: #1C3041;
+            padding: 1em;
+
+            p {
+                color: white;
+                margin-top: 1em;
+            }
+
+            .rating-box {
+                display: none;
+                position: absolute;
+                top: -3em;
+                left: -1.8em;
+                background-color: white;
+                padding: 1em;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+                &::after {
+                    content: '⏷';
+                    position: absolute;
+                    bottom: -.6em;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 3em;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+
+.star-ratings-css {
+    cursor: pointer;
+    unicode-bidi: bidi-override;
+    color: white;
+    font-size: 25px;
+    height: 25px;
+    width: 100px;
+    margin: 0;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #66201b;
+
+    &-top {
+        color: #eb4034;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+        display: block;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+    }
+
+    &-bottom {
+        padding: 0;
+        display: block;
+        z-index: 0;
+    }
+}
+
+// Method 2) Using a Sprite
+.star-ratings-sprite {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+    font-size: 0;
+    height: 21px;
+    line-height: 0;
+    overflow: hidden;
+    text-indent: -999em;
+    width: 110px;
+    margin: 0 auto;
+
+    &-rating {
+        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+        background-position: 0 100%;
+        float: left;
+        height: 21px;
+        display: block;
+    }
+
+}
+
+$unchecked-star: '\2606';
+$unchecked-color: #888;
+$checked-star: '\2605';
+$close: '╳';
+$checked-color: #e52;
+
+.star-cb-group {
+    /* remove inline-block whitespace */
+    font-size: 0;
+
+    * {
+        font-size: 2rem;
+    }
+
+    /* flip the order so we can use the + and ~ combinators */
+    unicode-bidi: bidi-override;
+    direction: rtl;
+
+    &>input {
+        display: none;
+
+        &+label {
+            /* only enough room for the star */
+            display: inline-block;
+            overflow: hidden;
+            text-indent: 9999px;
+            width: 1em;
+            white-space: nowrap;
+            cursor: pointer;
+
+            &:before {
+                display: inline-block;
+                text-indent: -9999px;
+                content: $unchecked-star;
+                color: $unchecked-color;
+            }
+        }
+
+        &:checked~label:before,
+        &+label:hover~label:before,
+        &+label:hover:before {
+            content: $checked-star;
+            color: #e52;
+            text-shadow: 0 0 1px #333;
+        }
+    }
+
+    /* the hidden clearer */
+    &>.star-cb-clear+label {
+        text-indent: -9999px;
+        width: .5em;
+    }
+
+    &>.star-cb-clear+label:before {
+        width: .5em;
+    }
+
+    &:hover>input+label:before {
+        content: $unchecked-star;
+        color: $unchecked-color;
+        text-shadow: none;
+    }
+
+    &:hover>input+label:hover~label:before,
+    &:hover>input+label:hover:before {
+        content: $checked-star;
+        color: $checked-color;
+        text-shadow: 0 0 1px #333;
+    }
+}

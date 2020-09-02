@@ -1,0 +1,105 @@
+#bread {
+    display: block;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+
+    span {
+        font-size: 1.4em;
+    }
+
+    a {
+        color: #eb4034;
+        text-decoration: none;
+    }
+}
+
+
+.main-container-signup {
+
+    figure {
+        width: 100%;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: 0 -200px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
+        }
+    }
+
+    .container {
+        padding: 1em 1em 1em 2em;
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2em;
+
+            input,
+            label {
+                display: block;
+                width: 50%;
+            }
+
+            label {
+                margin: 1em 0 .5em 0;
+            }
+
+            input {
+                padding: .5em;
+                border: 1px solid #afafaf;
+            }
+
+            textarea {
+                padding: .5em;
+                width: 50%;
+                min-height: 200px;
+                max-height: 350px;
+                resize: vertical;
+                border: 1px solid #afafaf;
+
+            }
+
+            button {
+                display: block;
+                padding: .5em 2em;
+                border: none;
+                background: #5386E4;
+                color: white;
+                cursor: pointer;
+            }
+
+            select {
+                padding: .5em;
+                margin-right: 1em;
+                width: 50%;
+            }
+
+            .birtdate {
+                display: flex;
+                width: 50%;
+            }
+
+            .gender-container {
+                display: flex;
+
+                label {
+                    margin: 0 1em 0 .5em;
+                }
+
+                .radio {
+                    width: 20px;
+                }
+
+                .gender {
+                    align-items: center;
+                    display: flex;
+                    margin-right: 1em;
+                }
+            }
+        }
+    }
+}

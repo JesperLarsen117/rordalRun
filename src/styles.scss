@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #eb4034;
+    font-family: 'Montserrat', sans-serif;
+}

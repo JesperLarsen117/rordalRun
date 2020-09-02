@@ -1,0 +1,27 @@
+<section>
+    <header>
+        <figure><img src="../../../assets/images/COLOURBOX16089420.jpg" alt="header image"></figure>
+    </header>
+    <section class="content-frontpage" *ngIf="pageContent">
+        <section class="left">
+            <h1>{{pageContent.title}}</h1>
+            <section [innerHTML]="pageContent.content">
+
+            </section>
+            <a routerLink="">MERE INFO</a>
+        </section>
+        <section class="right">
+            <article *ngIf="distanceData">
+                <h3>{{distanceData.title}}</h3>
+                <p [innerHTML]="distanceData.content"></p>
+            </article>
+            <section class="bottom">
+                <article *ngFor="let item of runData">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                    <a routerLink="/">TILMELD {{item.title}}</a>
+                </article>
+            </section>
+        </section>
+    </section>
+</section>

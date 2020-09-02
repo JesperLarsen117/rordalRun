@@ -1,0 +1,50 @@
+footer {
+    padding: 1em;
+    background-color: #1C3041;
+
+    .footer-container {
+        padding: 1em;
+        margin-left: auto;
+        width: 60%;
+        display: flex;
+        color: white;
+
+        section {
+            ul {
+                li {
+                    list-style: none;
+
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        color: white;
+                        padding: .2em 0;
+                    }
+                }
+            }
+
+            p {
+                padding: .2em 0;
+
+            }
+        }
+
+        .arrow {
+            span {
+                background-color: #eb4034;
+                color: white;
+                padding: 2em;
+                cursor: pointer;
+                margin-left: 5em;
+
+            }
+        }
+    }
+}
+
+.rotate {
+    margin-top: 2.6em;
+    font-size: .8em;
+    align-self: flex-start;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,59 @@
+<section class="main-container-signup">
+    <header>
+        <figure><img src="../../../assets/images/COLOURBOX15440476.jpg" alt="header image"></figure>
+    </header>
+    <section class="container">
+        <span id="bread">
+            <a href="/">FORSIDE</a> <span class="material-icons">keyboard_arrow_right</span>
+            <p>DISTANCER</p>
+        </span>
+
+        <h1 *ngIf="distanceData">{{distanceData.title}}</h1>
+        <section class="content-distance" *ngIf="distanceData" [innerHTML]="distanceData.content">
+        </section>
+        <section class="run-container">
+
+            <section class="runs">
+                <h3>Distancebeskrivelser</h3>
+                <p>Klik på de enkelte distancer for at få en beskrivelse af, hvad den enkelte distance har at tilbyde.
+                </p>
+                <ul>
+                    <li *ngFor="let item of runs">
+                        <button (click)="filterRuns(item.id)">
+                            <p class="title-run">{{item.title}}</p>
+                            <p class="arrow-run"><span class="material-icons">keyboard_arrow_right</span></p>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+            <section class="run">
+                <h3 *ngIf="run">{{run.title}}</h3>
+                <section class="rating-box" #ratingBox>
+                    <form action="POST" [formGroup]="rateFrom">
+                        <span class="star-cb-group" *ngIf="run">
+                            <input type="radio" id="rating-5" (click)="postRate(run.id)" formControlName="rating"
+                                value="5" /><label for="rating-5">5</label>
+                            <input type="radio" id="rating-4" (click)="postRate(run.id)" formControlName="rating"
+                                value="4" checked="checked" /><label for="rating-4">4</label>
+                            <input type="radio" id="rating-3" (click)="postRate(run.id)" formControlName="rating"
+                                value="3" /><label for="rating-3">3</label>
+                            <input type="radio" id="rating-2" (click)="postRate(run.id)" formControlName="rating"
+                                value="2" /><label for="rating-2">2</label>
+                            <input type="radio" id="rating-1" (click)="postRate(run.id)" formControlName="rating"
+                                value="1" /><label for="rating-1">1</label>
+                            <input type="radio" id="rating-0" (click)="postRate(run.id)" formControlName="rating"
+                                value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+                        </span>
+                    </form>
+                </section>
+                <div class="star-ratings-css" (click)="rate()">
+                    <div *ngIf="rating" class="star-ratings-css-top" style="width: {{rating}}%">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                    <div class="star-ratings-css-bottom">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                </div>
+                <p *ngIf="run">{{run.description}}</p>
+            </section>
+        </section>
+    </section>
+</section>

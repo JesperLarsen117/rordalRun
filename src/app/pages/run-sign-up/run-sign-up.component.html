@@ -1,0 +1,120 @@
+<section class="main-container-signup">
+    <header>
+        <figure><img src="../../../assets/images/COLOURBOX15440476.jpg" alt="header image"></figure>
+    </header>
+    <section class="container">
+        <span id="bread">
+            <a href="/">FORSIDE</a> <span class="material-icons">keyboard_arrow_right</span>
+            <p>TILMELDING</p>
+        </span>
+        <h1 *ngIf="signUpData">{{signUpData.title}}</h1>
+        <section *ngIf="signUpData" [innerHTML]="signUpData.content">
+        </section>
+        <form action="POST" [formGroup]="signUp" (ngSubmit)="onSubmit()">
+            <section>
+                <label for=" firstname">Navn</label>
+                <input type="text" formControlName="firstname" placeholder="Hvad er dit fornavn?">
+                <label for="lastname">Efternavn</label>
+                <input type="text" formControlName="lastname" placeholder="Hvad er dit efternavn?">
+                <div>
+                    <label for="birthdate">Fødselsdato</label>
+                    <div class="birtdate">
+                        <select formControlName="day">
+                            <option [ngValue]="null" disabled hidden>Dag</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select formControlName="month">
+                            <option [ngValue]="null" disabled hidden>Måned</option>
+                            <option value="1">Januar</option>
+                            <option value="2">Februar</option>
+                            <option value="3">Marts</option>
+                            <option value="4">April</option>
+                            <option value="5">Maj</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select formControlName="year">
+                            <option [ngValue]="null" disabled hidden>År</option>
+                            <option *ngFor="let n of numSequence(81); let i = index;" [value]="1940 + i">{{1940 + i}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <label for="gender">Køn</label>
+                <div class="gender-container">
+                    <div class="gender">
+                        <input class="radio" type="radio" formControlName="gender" value="m">
+                        <label for="m">Mand</label>
+                    </div>
+                    <div class="gender">
+                        <input class="radio" type="radio" formControlName="gender" value="w">
+                        <label for="w">Kvinde</label>
+                    </div>
+                    <div class="gender">
+                        <input class="radio" type="radio" formControlName="gender" value="d">
+                        <label for="d">Andet</label>
+                    </div>
+                </div>
+                <label for="email">E-mail</label>
+                <input type="email" formControlName="email" placeholder="Hvad er din E-mail?">
+            </section>
+            <section>
+                <label for="Address">Adresse</label>
+                <input type="text" formControlName="address" placeholder="Hvad er din adresse?">
+                <label for="zipcode">Postnummer</label>
+                <input type="number" formControlName="zipcode" placeholder="Hvad er dit postnummer?">
+                <label for="city">By</label>
+                <input type="text" formControlName="city" placeholder="Hvor by bor du i?">
+                <label for="phone">Telefon</label>
+                <input type="number" formControlName="phone" placeholder="Hvad er dit telefon nummer?">
+                <label for="program">Program</label>
+                <select formControlName="program">
+                    <option [ngValue]="null" disabled hidden>Vælg program</option>
+                    <option value="1">One mile</option>
+                    <option value="2">5 km</option>
+                    <option value="3">10 km</option>
+                </select>
+            </section>
+            <section>
+                <label for="comment">Kommentar</label>
+                <textarea formControlName="comment" placeholder="Skriv en kommentar"></textarea>
+                <button>TILMELD</button>
+            </section>
+        </form>
+    </section>
+</section>

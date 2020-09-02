@@ -1,0 +1,104 @@
+#menuBtn {
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    z-index: 3;
+    color: white;
+    cursor: pointer;
+    padding: .5em;
+}
+
+#menuCloseBtn {
+    position: absolute;
+    top: .5em;
+    left: .5em;
+    color: white;
+    cursor: pointer;
+    padding: .5em;
+
+}
+
+.open {
+    display: block;
+}
+
+nav {
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+    transform: translateX(100%);
+    position: fixed;
+    right: 0;
+    padding-top: 4em;
+    width: 280px;
+    height: 100vh;
+    text-align: center;
+    z-index: 4;
+    background-color: #eb4034;
+
+    ul {
+        li {
+            list-style-type: none;
+            padding: 0 1em;
+
+            a {
+                text-transform: uppercase;
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 1em;
+                border-bottom: 1px solid white;
+
+                &:nth-child(1) {
+                    border-top: 1px solid white;
+
+                }
+            }
+
+            #logout {
+                background: none;
+                border: none;
+                color: white;
+                padding: 1em;
+                cursor: pointer;
+                font-size: 1em;
+                border-bottom: 1px solid white;
+                width: 100%;
+            }
+
+            details {
+                border-bottom: 1px solid white;
+
+                summary {
+                    color: white;
+                    padding: 1em;
+                    cursor: pointer;
+
+                    &::-webkit-details-marker {
+                        display: none;
+                    }
+                }
+
+                label {
+                    display: block;
+                    text-align: left;
+                    color: white;
+                    padding: .5em 0;
+                }
+
+                input,
+                button {
+                    width: 100%;
+                    padding: .5em;
+                }
+
+                button {
+                    margin-top: 1em;
+                    border: none;
+                    background-color: #fff;
+                    color: #eb4034;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
