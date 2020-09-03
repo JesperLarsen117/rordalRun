@@ -37,21 +37,21 @@ export class HttpService {
   getRating(rating_id: number) {
     return this.http.get(`https://api.mediehuset.net/rordal/ratings/${rating_id}`);
   }
-  getAverageRating(rating_id: number, header) {
+  getAverageRating(rating_id: number, header: any) {
     return this.http.get(`https://api.mediehuset.net/rordal/ratings/average/${rating_id}`, header);
   }
-  postRating(body, header) {
+  postRating(body: any, header: any) {
     console.log(header);
 
     return this.http.post('https://api.mediehuset.net/rordal/ratings', body, header);
   }
-  deleteRating(rating_id: number, header) {
+  deleteRating(rating_id: number, header: any) {
     return this.http.delete(`https://api.mediehuset.net/rordal/ratings/${rating_id}`, header);
   }
   getSearchResult(keyword: string) {
     return this.http.get(`https://api.mediehuset.net/rordal/search/${keyword}`);
   }
-  getLogin(body) {
+  getLogin(body: any) {
     return this.http.post('https://api.mediehuset.net/token', body);
   }
 }

@@ -1,6 +1,6 @@
 .overall-container {
     display: flex;
-    min-height: 100vh;
+    min-height: 95vh;
     width: 100vw;
 
     .main-aside {
@@ -10,6 +10,10 @@
         width: 280px;
         margin-left: auto;
         right: 0;
+
+        @media (max-width: 1000px) {
+            width: 80px;
+        }
 
         figure {
             position: absolute;
@@ -24,11 +28,18 @@
                 width: 280px;
                 cursor: pointer;
 
+                @media (max-width: 1000px) {
+                    width: 80px;
+                }
             }
         }
     }
 
     .main-container {
         width: calc(100% - 280px);
+
+        @media(max-width: 1000px) {
+            width: calc(100% - 80px);
+        }
     }
 }

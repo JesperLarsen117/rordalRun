@@ -6,14 +6,17 @@ import { SearchComponent } from './pages/search/search.component';
 import { RunSignUpComponent } from './pages/run-sign-up/run-sign-up.component';
 import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 import { DistanceComponent } from './pages/distance/distance.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 const routes: Routes = [
   { path: '', component: FrontpageComponent },
   { path: 'tilmelding', component: RunSignUpComponent },
+  { path: 'tilmelding/:id', component: RunSignUpComponent },
   { path: 'tilmelding/tak', component: ThankyouComponent },
   { path: 'deltagerliste', component: SearchComponent },
   { path: 'distancer', component: DistanceComponent },
+  { path: 'om-rørdal-run', component: AboutComponent },
   { path: '**', component: ErrorpageComponent },
 ];
 

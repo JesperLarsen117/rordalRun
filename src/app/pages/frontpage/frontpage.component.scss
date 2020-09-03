@@ -23,9 +23,14 @@ section {
     }
 
     .content-frontpage {
-        padding: 2em;        display: grid;
+        padding: 2em;
+        display: grid;
         grid-template-columns: 30% 1fr;
         gap: 2em;
+
+        @media (max-width: 1000px) {
+            display: block;
+        }
 
         .left {
             a {
@@ -41,10 +46,25 @@ section {
         .right {
             align-self: end;
 
+            @media (max-width: 1000px) {
+                margin-top: 4em;
+            }
+
             .bottom {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 2em;
+
+                @media (max-width: 1000px) {
+                    display: block;
+                    margin: 1em 0;
+                }
+
+                h3 {
+                    @media (max-width: 1000px) {
+                        margin-top: 2em;
+                    }
+                }
 
                 p {
                     height: 75px;

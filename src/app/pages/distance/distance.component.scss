@@ -43,11 +43,19 @@ section {
         grid-template-columns: 1fr 1fr;
         gap: 2em;
 
+        @media (max-width: 1000px) {
+            display: block;
+        }
+
         .runs {
             background-color: #1C3041;
             padding: 1em;
             width: 100%;
             min-height: 530px;
+
+            @media (max-width: 1000px) {
+                min-height: 200px;
+            }
 
             p {
                 color: white;
@@ -98,11 +106,16 @@ section {
             .rating-box {
                 display: none;
                 position: absolute;
-                top: -3em;
-                left: -1.8em;
+                top: -5em;
+                left: -2.2em;
                 background-color: white;
                 padding: 1em;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+                .rating-box-text {
+                    color: black !important;
+                    margin-left: 1.5em;
+                }
 
                 &::after {
                     content: '⏷';

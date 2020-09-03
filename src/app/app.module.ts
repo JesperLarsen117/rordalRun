@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './partials/footer/footer.component';
 import { ThankyouComponent } from './pages/thankyou/thankyou.component';
 import { DistanceComponent } from './pages/distance/distance.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DistanceComponent } from './pages/distance/distance.component';
     SearchComponent,
     FooterComponent,
     ThankyouComponent,
-    DistanceComponent
+    DistanceComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,7 @@
             <section class="run">
                 <h3 *ngIf="run">{{run.title}}</h3>
                 <section class="rating-box" #ratingBox>
+                    <p class="rating-box-text">Bedøm distancen.</p>
                     <form action="POST" [formGroup]="rateFrom">
                         <span class="star-cb-group" *ngIf="run">
                             <input type="radio" id="rating-5" (click)="postRate(run.id)" formControlName="rating"

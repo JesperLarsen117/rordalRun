@@ -9,6 +9,12 @@ footer {
         display: flex;
         color: white;
 
+        @media (max-width: 1000px) {
+            width: 100%;
+            display: block;
+
+        }
+
         section {
             ul {
                 li {
@@ -37,6 +43,9 @@ footer {
                 cursor: pointer;
                 margin-left: 5em;
 
+                @media (max-width: 1000px) {
+                    margin: 1em;
+                }
             }
         }
     }
@@ -47,4 +56,12 @@ footer {
     font-size: .8em;
     align-self: flex-start;
     transform: rotate(-90deg);
+
+    @media (max-width: 1000px) {
+        width: 280px;
+        transform: rotate(0);
+        font-weight: bold;
+        font-size: 1.2em;
+
+    }
 }

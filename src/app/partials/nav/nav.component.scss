@@ -33,7 +33,12 @@ nav {
     height: 100vh;
     text-align: center;
     z-index: 4;
-    background-color: #eb4034;
+    background-color: rgb(235, 64, 52);
+
+    @media (max-width: 1000px) {
+        width: 280px;
+        z-index: 200z;
+    }
 
     ul {
         li {
@@ -97,6 +102,12 @@ nav {
                     background-color: #fff;
                     color: #eb4034;
                     font-weight: bold;
+                    cursor: pointer;
+
+                    &:disabled {
+                        cursor: default;
+                        opacity: .4;
+                    }
                 }
             }
         }

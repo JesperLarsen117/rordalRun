@@ -47,6 +47,5 @@ export class SearchComponent implements OnInit {
   sortCities() {
     this.reverseCity ? this.result.sort((a, b) => (a.city > b.city) ? 1 : ((b.city > a.city) ? -1 : 0)) : this.result.sort((a, b) => (b.city > a.city) ? 1 : ((a.city > b.city) ? -1 : 0))
     this.reverseCity = this.reverseCity ? false : true
-
   }
 }

@@ -5,10 +5,8 @@
     <section class="content-frontpage" *ngIf="pageContent">
         <section class="left">
             <h1>{{pageContent.title}}</h1>
-            <section [innerHTML]="pageContent.content">
-
-            </section>
-            <a routerLink="">MERE INFO</a>
+            <p>{{pageContent.teaser}}</p>
+            <a routerLink="/om-rørdal-run">MERE INFO</a>
         </section>
         <section class="right">
             <article *ngIf="distanceData">
@@ -19,7 +17,7 @@
                 <article *ngFor="let item of runData">
                     <h3>{{item.title}}</h3>
                     <p>{{item.description}}</p>
-                    <a routerLink="/">TILMELD {{item.title}}</a>
+                    <a routerLink="/tilmelding/{{item.id}}">Tilmeld {{item.title}}</a>
                 </article>
             </section>
         </section>

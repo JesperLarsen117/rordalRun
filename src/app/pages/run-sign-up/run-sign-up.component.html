@@ -113,7 +113,7 @@
             <section>
                 <label for="comment">Kommentar</label>
                 <textarea formControlName="comment" placeholder="Skriv en kommentar"></textarea>
-                <button>TILMELD</button>
+                <button [disabled]="!signUp.valid">TILMELD</button>
             </section>
         </form>
     </section>

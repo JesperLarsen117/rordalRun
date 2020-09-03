@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-run-sign-up',
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./run-sign-up.component.scss']
 })
 export class RunSignUpComponent implements OnInit {
+  programId = this.route.snapshot.params.id ? this.route.snapshot.params.id : null
   signUpData: any;
   signUp = this.fb.group({
     firstname: ['', Validators.required],
@@ -22,12 +23,14 @@ export class RunSignUpComponent implements OnInit {
     zipcode: ['', Validators.required],
     city: ['', Validators.required],
     phone: ['', Validators.required],
-    program: [null, Validators.required],
+    program: [this.programId, Validators.required],
     comment: ['']
   })
-  constructor(private http: HttpService, private fb: FormBuilder, private router: Router) { }
+  constructor(private http: HttpService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute) { }
 
   async ngOnInit(): Promise<void> {
+    console.log();
+
     this.signUpData = await this.http.getPages().toPromise();
     this.signUpData = this.signUpData.items[2];
     console.log(this.signUpData);

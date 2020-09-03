@@ -2,17 +2,15 @@
     <header>
         <figure><img src="../../../assets/images/COLOURBOX15440476.jpg" alt="header image"></figure>
     </header>
-    <section class="container-error">
+    <section class="container-about">
         <span id="bread">
             <a href="/">FORSIDE</a> <span class="material-icons">keyboard_arrow_right</span>
-            <p>404 FEJL</p>
+            <p>DISTANCER</p>
         </span>
-
-        <section class="content-about">
-            <h1>40<span>4</span></h1>
-            <h2>Siden findes ikke!</h2>
-            <h3>Siden du leder efter findes ikke.</h3>
-            <a routerLink="/">TILBAGE TIL FORSIDEN</a>
+        <section class="content-about" *ngIf="aboutData">
+            <h1>{{aboutData.title}}</h1>
+            <section [innerHTML]="aboutData.content">
+            </section>
         </section>
     </section>
 </section>

@@ -7,7 +7,7 @@
         close
     </span>
     <ul>
-        <li><a routerLink="">Om rørdal run</a></li>
+        <li><a routerLink="om-rørdal-run">Om rørdal run</a></li>
         <li><a routerLink="distancer">Distancer</a></li>
         <li><a routerLink="tilmelding">Tilmelding</a></li>
         <li><a routerLink="deltagerliste">Deltagerliste</a></li>
@@ -19,7 +19,7 @@
                     <input formControlName="username" type="text" placeholder="Skriv dit brugernavn">
                     <label for="password">Adgangskode</label>
                     <input formControlName="password" type="password" placeholder="Skriv din adgangskode">
-                    <button>Login</button>
+                    <button [disabled]="!login.valid">Login</button>
                 </form>
             </details>
             <button id="logout" (click)="logout()" *ngIf="isLoggedIn">Logout</button>

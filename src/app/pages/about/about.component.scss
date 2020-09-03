@@ -30,29 +30,6 @@ section {
     }
 }
 
-.container-error {
+.container-about {
     padding: 2em;
-
-    .content-about {
-        text-align: center;
-
-        h1 {
-            margin-top: 2em;
-        }
-
-        h2,
-        h3,
-        a {
-            margin-top: 1em;
-        }
-
-        a {
-            display: inline-block;
-            padding: 1em 4em;
-            background-color: #eb4034;
-            color: white;
-            border: none;
-            text-decoration: none;
-        }
-    }
 }

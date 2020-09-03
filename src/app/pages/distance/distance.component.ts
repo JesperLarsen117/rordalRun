@@ -67,6 +67,8 @@ export class DistanceComponent implements OnInit {
       if (this.rateFrom.get("rating").value > 0) {
         console.log('post');
         const rateReturn = await this.http.postRating(formData, { headers }).toPromise();
+        console.log(rateReturn);
+
       } else {
         const rateReturn = await this.http.deleteRating(run_id, { headers }).toPromise();
         console.log('delete');
